@@ -25,7 +25,7 @@ class SimulationExecutionOptions:
     # GPU device flag
     device_num: Optional[int] = None
     # number of threads
-    num_threads: Union[int, str] = 'all'
+    num_threads: int = 8
 
     # user defined thread binding option
     thread_binding: Optional[bool] = None
