@@ -65,7 +65,7 @@ def kspaceFirstOrder3DG(
     Returns:
 
     """
-    assert execution_options.is_gpu_simulation, 'kspaceFirstOrder2DG can only be used for GPU simulations'
+    assert execution_options.is_gpu_simulation, 'kspaceFirstOrder3DG can only be used for GPU simulations'
     sensor_data = kspaceFirstOrder3DC(
         kgrid=kgrid,
         source=source,
@@ -461,7 +461,8 @@ def kspaceFirstOrder3D(
         if options.save_to_disk_exit:
             return
 
-        executor = Executor(device='gpu')
+        executor_device = "gpu" if execution_options.is_gpu_simulation else "cpu"
+        executor = Executor(device=executor_device)
         executor_options = execution_options.get_options_string(sensor=k_sim.sensor)
         sensor_data = executor.run_simulation(k_sim.options.input_filename, k_sim.options.output_filename,
                                               options=executor_options)
