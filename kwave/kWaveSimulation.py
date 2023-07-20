@@ -1055,7 +1055,8 @@ class kWaveSimulation(object):
 
             # give a warning if the timestep is larger than stability limit allows
             if self.kgrid.dt > dt_stability_limit:
-                warn('  WARNING: time step may be too large for a stable simulation.')
+                warn('  WARNING: time step may be too large for a stable simulation, '
+                     f' dt: {self.kgrid.dt}, limit: {dt_stability_limit}')
 
     @staticmethod
     def select_precision(opt: SimulationOptions):
