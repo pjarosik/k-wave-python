@@ -5,7 +5,6 @@ import warnings
 from datetime import datetime
 from typing import Optional
 
-import cv2
 import h5py
 import numpy as np
 
@@ -515,17 +514,3 @@ def assign_str_attr(attrs, attr_name, attr_val):
     """
     attrs.create(attr_name, attr_val, None, dtype=f'<S{len(attr_val)}')
 
-
-def load_image(path, is_gray):
-    if is_gray:
-        img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
-    else:
-        img = cv2.imread(path, cv2.IMREAD_COLOR)
-        raise NotImplementedError
-        # im = squeeze(double(im(:, :, 1)) + double(im(:, :, 2)) + double(im(:, :, 3)));
-    img = img.astype(float)
-
-    # scale pixel values from 0 -> 1
-    img = img.max() - img
-    img = img * (1 / img.max())
-    return img
