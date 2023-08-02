@@ -15,7 +15,9 @@ in order to leverage pythonic practices.
 To install the most recent build of k-Wave-python from PyPI, run:
 
 ```bash
-pip install k-wave-python
+git clone https://github.com/pjarosik/k-wave-python
+cd k-wave-python
+pip install -e .
 ```
 
 After installing the python package, the required binaries will be downloaded and installed the first time you run a
@@ -28,7 +30,7 @@ simulation.
 After installation, run the B-mode reconstruction example in the `examples` directory of the repository:
 
 ```bash
-git clone https://github.com/waltsims/k-wave-python
+git clone https://github.com/pjarosik/k-wave-python
 cd k-wave-python
 pip install '.[example]' 
 python3 examples/bmode_reconstruction_example.py
@@ -44,7 +46,7 @@ This example file steps through the process of:
 This example expects an NVIDIA GPU by default to simulate with k-Wave.
 
 To test the reconstruction on a machine with a GPU,
-set `RUN_SIMULATION` [on line 14 of `bmode_reconstruction_example.py`](https://github.com/waltsims/k-wave-python/blob/master/examples/bmode_reconstruction_example.py#L18)
+set `RUN_SIMULATION` [on line 14 of `bmode_reconstruction_example.py`](https://github.com/pjarosik/k-wave-python/blob/master/examples/bmode_reconstruction_example.py#L18)
 to `True` and the example will run without the pre-computed data.
 
 ## Development
