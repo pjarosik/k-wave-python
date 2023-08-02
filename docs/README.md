@@ -12,6 +12,9 @@ in order to leverage pythonic practices.
 
 ## Installation
 
+Requirements:
+- NVIDIA CUDA Toolkit 12.2
+
 To install the most recent build of k-Wave-python from PyPI, run:
 
 ```bash
