@@ -33,13 +33,11 @@ simulation.
 After installation, run the B-mode reconstruction example in the `examples` directory of the repository:
 
 ```bash
-git clone https://github.com/pjarosik/k-wave-python
-cd k-wave-python
 pip install '.[example]' 
 python3 examples/bmode_reconstruction_example.py
 ```
 
-This example file steps through the process of:
+The above example file steps through the process of:
  1. Generating a simulation medium
  2. Configuring a transducer
  3. Running the simulation
